@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import { Input } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-experience',
@@ -7,4 +10,8 @@ import {Component} from '@angular/core';
   styleUrl: './experience.component.css'
 })
 
-export class ExperienceComponent {}
+export class ExperienceComponent {
+  @Input() name  = '';
+  @Input() description = '';
+
+}
