@@ -1,9 +1,33 @@
-#name{
+.circle-container{
+  clip-path: circle(40% at center);
+  height: fit-content;
+  width: fit-content;
+
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+#pp{
+  height: 100%;
+  width: 100%;
+  transform: translate(0, 20px);
+}
+
+.profile{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  font-size: 50px;
-  margin: 0;
+  width: fit-content;
+}
+
+#contact{
+  width: 100%;
+  height: fit-content;
+  background: black;
+  color: white;
 }

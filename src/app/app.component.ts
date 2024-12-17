@@ -10,4 +10,5 @@ import { ExperienceComponent } from './experience/experience.component';
 })
 export class AppComponent {
   title = 'Killian Gricourt';
+  email = 'gricourt.killian@gmail.com'
 }
