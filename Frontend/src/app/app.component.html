@@ -2,14 +2,33 @@
   <div class="content">
     <div class="profile">
       <div class="circle-container">
-        <img id="pp" src="https://media.licdn.com/dms/image/v2/D4D03AQGwi0aGv7oEXA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1696786262303?e=2147483647&v=beta&t=x0QdRrRgHpedVdu7jaxczE-woUieo2LiawnBQUMD51I" alt="Killian's picture">
+        <img id="pp"
+             src="https://media.licdn.com/dms/image/v2/D4D03AQGwi0aGv7oEXA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1696786262303?e=2147483647&v=beta&t=x0QdRrRgHpedVdu7jaxczE-woUieo2LiawnBQUMD51I"
+             alt="Killian's picture" fill>
       </div>
       <h1 id="name">{{ title }}</h1>
     </div>
 
-    <!--@for (exp of this.experiences; track exp.id) {
-      <app-experience name="{{exp.title}}" description="{{exp.description}}"></app-experience>
-    }></!-->
+    <div *ngIf="loading">
+      <p>Chargement des expériences...</p>
+    </div>
+
+    <!-- Affiche les expériences une fois récupérées -->
+    <div *ngIf="!loading && experiences && experiences.length > 0">
+      <div *ngFor="let exp of experiences">
+        <app-experience [experience]="exp"></app-experience>  <!-- Passe l'objet expérience complet ici -->
+      </div>
+    </div>
+
+    <!-- Affiche un message d'erreur -->
+    <div *ngIf="errorMessage">
+      <p class="error">Erreur : {{ errorMessage }}</p>
+    </div>
+
+    <!-- Affiche un message si aucune donnée n'est disponible -->
+    <div *ngIf="!loading && experiences.length === 0">
+      <p>Aucune expérience disponible pour le moment.</p>
+    </div>
 
 
 
