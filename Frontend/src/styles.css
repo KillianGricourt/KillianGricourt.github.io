@@ -5,13 +5,14 @@ html, body{
 }
 
 body{
-  background-color: rgba(23, 49, 76, 0.85);
+  background-color: black;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgb(34, 62, 96);
 }
 
 

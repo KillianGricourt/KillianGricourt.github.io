@@ -1,0 +1,18 @@
+.experience {
+  width: 100%;
+  max-width: 30%;
+}
+
+
+@media (max-width: 768px) {
+  .experience {
+    max-width: 100%;
+  }
+}
+.title {
+  max-width: fit-content;
+}
+
+.description {
+  width: auto;
+}

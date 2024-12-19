@@ -1,0 +1,18 @@
+<div>
+  @if (isLoading) {
+    <p>
+      Chargement des expériences... (Cela peut prendre quelques minutes, le
+      serveur démarre)
+    </p>
+  }
+
+  @if (!isLoading && experiences && experiences.length > 0) {
+    @for (exp of experiences; track exp.id) {
+      <app-experience [experience]="exp" />
+    }
+  }
+
+  @if (errorMessage) {
+    <p class="error">Erreur : {{ errorMessage }}</p>
+  }
+</div>
