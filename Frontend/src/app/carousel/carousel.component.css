@@ -1,0 +1,25 @@
+.arrow {
+  border: solid black;
+  padding: 10px;
+  border-width: 0 5px 5px 0;
+}
+
+.previous, .next{
+  position: absolute;
+}
+
+.previous {
+  left: 45px;
+  transform: rotate(135deg);
+}
+.next {
+  right: 45px;
+  transform: rotate(-45deg);
+}
+
+.carousel{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  position: relative;
+}

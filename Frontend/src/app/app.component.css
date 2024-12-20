@@ -5,6 +5,11 @@
   box-sizing: border-box;
   flex-direction: row;
   height: fit-content;
+  min-height: 100%;
+}
+
+.cpanel {
+  flex: 1;
 }
 
 #contact{

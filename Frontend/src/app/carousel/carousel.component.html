@@ -1,0 +1,10 @@
+<div class="carousel">
+  <div class="arrow previous"></div>
+  @if (getElement(this.currentElement)) {
+    <app-experience
+      class="flex-container"
+      [experience]="getElement(this.currentElement)"
+    />
+  }
+  <div class="arrow next"></div>
+</div>

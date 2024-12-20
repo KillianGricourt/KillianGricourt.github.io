@@ -1,11 +1,23 @@
 .experience {
   width: 100%;
-  max-width: 30%;
+  max-width: 15%;
+  margin: auto;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 10px;
+  background: white;
+}
+
+.experience-container {
+  display: flex;
+  flex: 1;
+}
+
+.experiences {
+  flex: 1;
   margin: auto;
   text-align: center;
 }
-
-
 
 @media (max-width: 768px) {
   .experience {

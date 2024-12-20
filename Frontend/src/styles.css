@@ -16,4 +16,6 @@ body{
   background-color: #31363F;
 }
 
-
+.flex-container{
+  flex: 1;
+}

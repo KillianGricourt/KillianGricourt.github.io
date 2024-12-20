@@ -1,4 +1,4 @@
-<div>
+<div class="experiences">
   @if (isLoading) {
     <p>
       Chargement des expériences... (Cela peut prendre quelques minutes, le
@@ -7,9 +7,11 @@
   }
 
   @if (!isLoading && experiences && experiences.length > 0) {
-    @for (exp of experiences; track exp.id) {
+    <!--@for (exp of experiences; track exp.id) {
       <app-experience [experience]="exp" />
-    }
+    }-->
+    <app-carousel [elements]="experiences" />
+    <div></div>
   }
 
   @if (errorMessage) {
