@@ -1,11 +1,13 @@
 .experience {
   width: 100%;
   max-width: 15%;
+  height: 300px;
   margin: auto;
   text-align: center;
   border: 3px solid black;
   border-radius: 10px;
   background: white;
+  transition: transform 0.3s ease-in-out;
 }
 
 .experience-container {
@@ -15,6 +17,7 @@
 
 .experiences {
   flex: 1;
+  display: flex;
   margin: auto;
   text-align: center;
 }
