@@ -1,10 +1,10 @@
-<div class="carousel">
-  <div class="arrow previous"></div>
+<div class="carrousel">
+  <div class="arrow previous" (click)="onLeftArrowClick()"></div>
   @if (getElement(this.currentElement)) {
     <app-experience
       class="flex-container"
       [experience]="getElement(this.currentElement)"
     />
   }
-  <div class="arrow next"></div>
+  <div class="arrow next" (click)="onRightArrowClick()"></div>
 </div>

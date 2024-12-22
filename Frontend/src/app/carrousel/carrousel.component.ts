@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 import { ExperienceComponent } from '../experience/experience.component';
 
 @Component({
-  selector: 'app-carousel',
+  selector: 'app-carrousel',
   imports: [ExperienceComponent],
-  templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.css',
+  templateUrl: './carrousel.component.html',
+  styleUrl: './carrousel.component.css',
 })
-export class CarouselComponent {
+export class CarrouselComponent {
   @Input() elements!: any[];
   currentElement: number = 0;
 
@@ -15,10 +15,10 @@ export class CarouselComponent {
     if (n < 0) {
       n = this.currentElement;
     }
-    if (n >= this.elements.length) {
-      return 0;
+    if (n < this.elements.length - 1) {
+      return n + 1;
     }
-    return n + 1;
+    return 0;
   }
 
   public previous(n: number = -1): number {
@@ -37,5 +37,13 @@ export class CarouselComponent {
 
   public setCurrentElement(n: number): void {
     this.currentElement = n;
+  }
+
+  onRightArrowClick() {
+    this.setCurrentElement(this.next());
+  }
+
+  onLeftArrowClick() {
+    this.setCurrentElement(this.previous());
   }
 }

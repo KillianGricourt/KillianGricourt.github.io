@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Experience } from './experience.model';
 import { ExperienceService } from '../services/experience.service';
-import { CarouselComponent } from '../carousel/carousel.component';
+import { CarrouselComponent } from '../carrousel/carrousel.component';
 
 @Component({
   selector: 'app-experiences',
-  imports: [CarouselComponent],
+  imports: [CarrouselComponent],
   templateUrl: `experiences.component.html`,
   styleUrls: [`experience.component.css`],
 })
