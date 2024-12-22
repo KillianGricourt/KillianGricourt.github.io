@@ -22,3 +22,7 @@
   width: 100%;
   transform: translate(0, 20px);
 }
+
+.name{
+  font-size: 32px;
+}
