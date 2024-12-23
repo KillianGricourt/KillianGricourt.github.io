@@ -1,32 +1,31 @@
 .experience {
-  width: 100%;
-  max-width: 15%;
+  width: 15%;
+  min-width: min-content;
   height: 300px;
   margin: auto;
   text-align: center;
   border: 3px solid black;
   border-radius: 10px;
   background: white;
-  transition: transform 0.3s ease-in-out;
+  align-items: center;
+  display: flex;
 }
 
-.experience-container {
-  display: flex;
-  flex: 1;
+@media (max-width: 768px) {
+  .experience {
+    width: 55%;
+  }
 }
 
 .experiences {
   flex: 1;
   display: flex;
   margin: auto;
-  text-align: center;
+
 }
 
-@media (max-width: 768px) {
-  .experience {
-    max-width: 100%;
-  }
-}
+
+
 .title {
   max-width: fit-content;
   margin: auto;
