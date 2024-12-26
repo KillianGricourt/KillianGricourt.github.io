@@ -49,9 +49,9 @@ export class CarrouselComponent implements AfterViewInit {
     if (Math.abs(this.touched.x - x) < Math.abs(this.touched.y - y)) {
       return;
     }
-    if (this.touched.x - x > 10) {
+    if (this.touched.x - x > 20) {
       this.onRightArrowClick();
-    } else if (this.touched.x - x < 10) {
+    } else if (this.touched.x - x < -20) {
       this.onLeftArrowClick();
     }
   }
