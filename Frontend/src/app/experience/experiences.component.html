@@ -1,9 +1,22 @@
 <div class="experiences">
   @if (isLoading) {
-    <p>
-      Chargement des expériences... (Cela peut prendre quelques minutes, le
-      serveur démarre)
-    </p>
+    <!-- CSS animation for loading From Uiverse.io by jeremyssocial -->
+    <div class="flex-list">
+      <div class="terminal-loader">
+        <div class="terminal-header">
+          <div class="terminal-title">Status</div>
+          <div class="terminal-controls">
+            <div class="control close"></div>
+            <div class="control minimize"></div>
+            <div class="control maximize"></div>
+          </div>
+        </div>
+        <div class="text">Loading...</div>
+      </div>
+      <p class="centered">
+        Le server peut prendre jusqu'à 2 minutes pour démarrer
+      </p>
+    </div>
   }
 
   @if (!isLoading && experiences && experiences.length > 0) {

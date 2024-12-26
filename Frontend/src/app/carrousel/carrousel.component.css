@@ -2,6 +2,7 @@
   border: solid black;
   padding: 10px;
   border-width: 0 5px 5px 0;
+  z-index: 2;
 }
 
 .previous, .next{
@@ -22,4 +23,85 @@
   flex: 1;
   align-items: center;
   position: relative;
+  overflow: hidden;
+}
+
+.main_element{
+  z-index: 1;
+
+}
+
+.main_element.animate {
+  animation: main_element_animation 0.3s 1;
+}
+
+.main_element.animate.reverse {
+  animation: main_element_animation 0.3s 1 reverse;
+}
+
+.unfocused_element{
+  position: absolute;
+  opacity: 0.5;
+  width: 100%;
+  z-index: 0;
+  transform-origin: 50% 50%;
+}
+
+@keyframes main_element_animation {
+  100% {
+    opacity: 0.5;
+    transform: scale(0.8) translate(-12%, 0);
+  }
+}
+
+@keyframes unfocused_element_right_animation {
+  100% {
+    opacity: 1;
+    transform: none;
+    z-index: 1;
+  }
+}
+
+@keyframes unfocused_element_left_animation {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes unfocused_replacement_element_right_animation {
+  100% {
+    opacity: 0;
+  }
+}
+
+.unfocused_element.right {
+  transform: scale(0.8) translate(12%, 0);
+}
+
+.unfocused_element.right.animate {
+  animation: unfocused_element_right_animation 0.3s 1;
+}
+
+.unfocused_element.right.animate.reverse {
+  animation: unfocused_element_right_animation 0.3s 1 reverse;
+}
+
+.unfocused_element.right.replacement.animate {
+  animation: unfocused_replacement_element_right_animation 0.3s 1 reverse;
+}
+
+.unfocused_element.right.replacement.animate.reverse {
+  animation: unfocused_replacement_element_right_animation 0.3s 1;
+}
+
+.unfocused_element.left {
+  transform: scale(0.8) translate(-12%, 0);
+}
+
+.unfocused_element.left.animate {
+  animation: unfocused_element_left_animation 0.3s 1;
+}
+
+.unfocused_element.left.animate.reverse {
+  animation: unfocused_element_left_animation 0.3s 1 reverse;
 }

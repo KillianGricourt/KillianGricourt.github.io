@@ -2,9 +2,28 @@
   <div class="arrow previous" (click)="onLeftArrowClick()"></div>
   @if (getElement(this.currentElement)) {
     <app-experience
-      class="flex-container"
+      class="flex-container unfocused_element left"
+      [ngClass]="{ reverse: isReversed, animate: isAnimating }"
+      [experience]="getElement(this.previous())"
+    />
+    <app-experience
+      #main_element
+      class="flex-container main_element"
+      [ngClass]="{ reverse: isReversed, animate: isAnimating }"
       [experience]="getElement(this.currentElement)"
     />
+    <app-experience
+      class="flex-container unfocused_element right"
+      [ngClass]="{ reverse: isReversed, animate: isAnimating }"
+      [experience]="getElement(this.next())"
+    />
+    @if (isAnimating) {
+      <app-experience
+        class="flex-container unfocused_element right replacement"
+        [ngClass]="{ reverse: isReversed, animate: isAnimating }"
+        [experience]="getElement(next(next()))"
+      />
+    }
   }
   <div class="arrow next" (click)="onRightArrowClick()"></div>
 </div>

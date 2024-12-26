@@ -1,15 +1,31 @@
-import { Component, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { ExperienceComponent } from '../experience/experience.component';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-carrousel',
-  imports: [ExperienceComponent],
+  imports: [ExperienceComponent, NgClass],
   templateUrl: './carrousel.component.html',
   styleUrl: './carrousel.component.css',
 })
-export class CarrouselComponent {
+export class CarrouselComponent implements AfterViewInit {
+  @ViewChild('main_element', { read: ElementRef }) mainElement!: ElementRef;
   @Input() elements!: any[];
   currentElement: number = 0;
+  isAnimating = false;
+  isReversed = false;
+
+  ngAfterViewInit() {
+    const element = this.mainElement.nativeElement;
+
+    element.addEventListener('animationend', () => this.onAnimationEnd());
+  }
 
   public next(n: number = -1): number {
     if (n < 0) {
@@ -40,10 +56,20 @@ export class CarrouselComponent {
   }
 
   onRightArrowClick() {
-    this.setCurrentElement(this.next());
+    this.isAnimating = true;
   }
 
   onLeftArrowClick() {
     this.setCurrentElement(this.previous());
+    this.isAnimating = true;
+    this.isReversed = true;
+  }
+
+  onAnimationEnd() {
+    if (this.isAnimating && !this.isReversed) {
+      this.setCurrentElement(this.next());
+    }
+    this.isAnimating = false;
+    this.isReversed = false;
   }
 }
