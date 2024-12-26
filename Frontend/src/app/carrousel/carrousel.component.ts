@@ -16,15 +16,44 @@ import { NgClass } from '@angular/common';
 })
 export class CarrouselComponent implements AfterViewInit {
   @ViewChild('main_element', { read: ElementRef }) mainElement!: ElementRef;
+  @ViewChild('carrousel', { read: ElementRef }) carrousel!: ElementRef;
   @Input() elements!: any[];
   currentElement: number = 0;
   isAnimating = false;
   isReversed = false;
 
+  private touched = { x: 0, y: 0 };
+
   ngAfterViewInit() {
     const element = this.mainElement.nativeElement;
+    const carrouselElement = this.carrousel.nativeElement;
 
+    carrouselElement.addEventListener(
+      'touchstart',
+      (event: TouchEvent) =>
+        (this.touched = {
+          x: event.changedTouches[0].clientX,
+          y: event.changedTouches[0].clientY,
+        }),
+    );
+    carrouselElement.addEventListener('touchend', (event: TouchEvent) =>
+      this.onSwipe(
+        event.changedTouches[0].clientX,
+        event.changedTouches[0].clientY,
+      ),
+    );
     element.addEventListener('animationend', () => this.onAnimationEnd());
+  }
+
+  onSwipe(x: number, y: number) {
+    if (Math.abs(this.touched.x - x) < Math.abs(this.touched.y - y)) {
+      return;
+    }
+    if (this.touched.x - x > 10) {
+      this.onRightArrowClick();
+    } else if (this.touched.x - x < 10) {
+      this.onLeftArrowClick();
+    }
   }
 
   public next(n: number = -1): number {

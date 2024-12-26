@@ -24,6 +24,9 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .main_element{
