@@ -46,6 +46,10 @@ export class CarrouselComponent implements AfterViewInit {
       ),
     );
     element.addEventListener('animationend', () => this.onAnimationEnd());
+    setTimeout(
+      () => this.elementChange.emit(this.elements[this.currentElement]),
+      0,
+    ); //This timeout delay the event to the next change detection cycle
   }
 
   onSwipe(x: number, y: number) {
