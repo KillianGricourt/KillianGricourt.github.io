@@ -1,5 +1,5 @@
 .experience {
-  width: 15%;
+  width: 250px;
   min-width: min-content;
   height: 300px;
   margin: auto;
@@ -19,12 +19,22 @@
 }
 
 .experiences {
+  position: relative;
   flex: 1;
   display: flex;
-  margin: auto;
-
+  overflow: hidden;
 }
 
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.location, .date {
+  text-align: left;
+  padding-left: 10px;
+}
 
 
 .title {

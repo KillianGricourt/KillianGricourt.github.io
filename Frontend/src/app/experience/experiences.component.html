@@ -1,4 +1,5 @@
 <div class="experiences">
+  <app-image-displayer class="background-image" [src]="backgroundImage" />
   @if (isLoading) {
     <!-- CSS animation for loading From Uiverse.io by jeremyssocial -->
     <div class="flex-list">
@@ -20,11 +21,11 @@
   }
 
   @if (!isLoading && experiences && experiences.length > 0) {
-    <!--@for (exp of experiences; track exp.id) {
-      <app-experience [experience]="exp" />
-    }-->
-
-    <app-carrousel class="flex-container" [elements]="experiences" />
+    <app-carrousel
+      class="flex-container"
+      [elements]="experiences"
+      (elementChange)="onElementChange($event)"
+    />
     <div></div>
   }
 

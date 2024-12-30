@@ -7,4 +7,5 @@ export interface Experience {
   end_date: string;
   summary: string;
   description: string;
+  image: string;
 }

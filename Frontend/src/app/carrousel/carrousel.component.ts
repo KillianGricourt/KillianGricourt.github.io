@@ -2,7 +2,9 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { ExperienceComponent } from '../experience/experience.component';
@@ -18,6 +20,7 @@ export class CarrouselComponent implements AfterViewInit {
   @ViewChild('main_element', { read: ElementRef }) mainElement!: ElementRef;
   @ViewChild('carrousel', { read: ElementRef }) carrousel!: ElementRef;
   @Input() elements!: any[];
+  @Output() elementChange = new EventEmitter<any>();
   currentElement: number = 0;
   isAnimating = false;
   isReversed = false;
@@ -82,6 +85,7 @@ export class CarrouselComponent implements AfterViewInit {
 
   public setCurrentElement(n: number): void {
     this.currentElement = n;
+    this.elementChange.emit(this.elements[this.currentElement]);
   }
 
   onRightArrowClick() {

@@ -1,0 +1,14 @@
+<div class="background-container">
+  <img
+    [ngClass]="{ active: showImage1 }"
+    src="{{ backgroundImage1 }}"
+    alt=""
+    class="background-image"
+  />
+  <img
+    [ngClass]="{ active: !showImage1 }"
+    src="{{ backgroundImage2 }}"
+    alt=""
+    class="background-image"
+  />
+</div>
