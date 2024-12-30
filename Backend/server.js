@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const PORT = 5000;
 
-const dataFilePath = path.join(__dirname, 'data', 'experiences.json');
+const dataFilePath = path.join(__dirname, 'data');
 
 // Middleware
 app.use(cors());
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 const readData = () => {
     try {
-        const data = fs.readFileSync(dataFilePath, 'utf8');
+        const data = fs.readFileSync(path.join(dataFilePath, "experiences.json"), 'utf8');
         return JSON.parse(data);
     } catch (error) {
         console.error('Error reading JSON file:', error);
@@ -36,6 +36,8 @@ app.get('/experiences', (req, res) => {
     const experiences = readData();
     res.status(200).json(experiences);
 });
+
+app.use('/images', express.static(path.join(dataFilePath, 'images')));
 
 
 app.listen(PORT, () => {
