@@ -35,11 +35,11 @@
 }
 
 .main_element.animate {
-  animation: main_element_animation 0.3s 1;
+  animation: main_element_animation 0.3s 1 ease-in-out;
 }
 
 .main_element.animate.reverse {
-  animation: main_element_animation 0.3s 1 reverse;
+  animation: main_element_animation 0.3s 1 reverse ease-in-out;
 }
 
 .unfocused_element{
@@ -72,6 +72,9 @@
 }
 
 @keyframes unfocused_replacement_element_right_animation {
+  50% {
+    opacity: 0.5;
+  }
   100% {
     opacity: 0;
   }
@@ -82,19 +85,19 @@
 }
 
 .unfocused_element.right.animate {
-  animation: unfocused_element_right_animation 0.3s 1;
+  animation: unfocused_element_right_animation 0.3s 1 ease-in-out;
 }
 
 .unfocused_element.right.animate.reverse {
-  animation: unfocused_element_right_animation 0.3s 1 reverse;
+  animation: unfocused_element_right_animation 0.3s 1 reverse ease-in-out;
 }
 
 .unfocused_element.right.replacement.animate {
-  animation: unfocused_replacement_element_right_animation 0.3s 1 reverse;
+  animation: unfocused_replacement_element_right_animation 0.3s 1 reverse ease-in-out;
 }
 
 .unfocused_element.right.replacement.animate.reverse {
-  animation: unfocused_replacement_element_right_animation 0.3s 1;
+  animation: unfocused_replacement_element_right_animation 0.3s 1 ease-in-out;
 }
 
 .unfocused_element.left {
@@ -102,9 +105,9 @@
 }
 
 .unfocused_element.left.animate {
-  animation: unfocused_element_left_animation 0.3s 1;
+  animation: unfocused_element_left_animation 0.3s 1 ease-in-out;
 }
 
 .unfocused_element.left.animate.reverse {
-  animation: unfocused_element_left_animation 0.3s 1 reverse;
+  animation: unfocused_element_left_animation 0.3s 1 reverse ease-in-out;
 }

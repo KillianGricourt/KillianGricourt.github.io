@@ -1,5 +1,7 @@
 <div #carrousel class="carrousel">
-  <div class="arrow previous" (click)="onLeftArrowClick()"></div>
+  <div class="arrow-container" (click)="onLeftArrowClick()">
+    <div class="arrow previous"></div>
+  </div>
   @if (getElement(this.currentElement)) {
     <app-experience
       class="flex-container unfocused_element left"
@@ -25,5 +27,7 @@
       />
     }
   }
-  <div class="arrow next" (click)="onRightArrowClick()"></div>
+  <div class="arrow-container" (click)="onRightArrowClick()">
+    <div class="arrow next"></div>
+  </div>
 </div>
