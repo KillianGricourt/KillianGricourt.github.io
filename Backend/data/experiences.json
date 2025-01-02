@@ -20,7 +20,7 @@
     "image": "https://killiangricourt-github-io.onrender.com/images/grenoble.png",
     "duration": "3 mois",
     "start_date": "Janvier 2024",
-    "end_date": "Mars2024",
+    "end_date": "Mars 2024",
     "summary": "Migration du middleware CiGri de Ruby vers Python.",
     "description": "L'équipe avait pour rôle de réécrire le middleware CiGri en Python. J'ai participé à la planification du projet, la lecture du code actuel, la comparaison des versions et la répartition des tâches. J'ai aussi contribué à la création d'une API Python avec FastAPI et la récréation des routes API précédentes en Python.",
     "technologies": ["GitHub Actions", "PyCharm", "Git", "Postman", "FastAPI"],

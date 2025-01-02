@@ -1,5 +1,4 @@
 <div class="experiences">
-  <app-image-displayer class="background-image" [src]="backgroundImage" />
   @if (isLoading) {
     <!-- CSS animation for loading From Uiverse.io by jeremyssocial -->
     <div class="flex-list">
@@ -21,12 +20,20 @@
   }
 
   @if (!isLoading && experiences && experiences.length > 0) {
-    <app-carrousel
-      class="flex-container"
-      [elements]="experiences"
-      (elementChange)="onElementChange($event)"
-    />
-    <div></div>
+    <div class="experience-selection">
+      <app-image-displayer class="background-image" [src]="backgroundImage" />
+      <app-carrousel
+        class="flex-container carrousel"
+        [elements]="experiences"
+        (elementChange)="onElementChange($event)"
+      />
+    </div>
+    @if (currentExperience) {
+      <div class="centered experience-details">
+        <h3>{{ currentExperience.summary }}</h3>
+        <p>{{ currentExperience.description }}</p>
+      </div>
+    }
   }
 
   @if (errorMessage) {

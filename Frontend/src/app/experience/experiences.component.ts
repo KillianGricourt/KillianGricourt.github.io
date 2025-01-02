@@ -17,10 +17,12 @@ export class ExperienceListComponent implements OnInit {
   defaultImage: string =
     'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
   backgroundImage: string = '';
+  currentExperience: Experience | undefined;
   constructor(private experienceService: ExperienceService) {}
 
   ngOnInit(): void {
     this.loadExperiences();
+    this.backgroundImage = this.defaultImage;
   }
 
   private loadExperiences(): void {
@@ -39,5 +41,6 @@ export class ExperienceListComponent implements OnInit {
   onElementChange(experience: Experience): void {
     this.backgroundImage =
       experience.image !== '' ? experience.image : this.defaultImage;
+    this.currentExperience = experience;
   }
 }
