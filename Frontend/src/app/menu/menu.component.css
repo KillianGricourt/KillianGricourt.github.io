@@ -1,0 +1,34 @@
+li{
+  list-style: none;
+  height: fit-content;
+  padding: 0.5em;
+  font-size: 2em;
+}
+
+ul {
+  list-style: none;
+  padding: 10% 0 0;
+  margin: 0;
+}
+
+li > a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+li > a::before {
+  content: "";
+  position: absolute;
+  border-radius: 2px;
+  background-color: white;;
+  transition: all 0.2s ease-out;
+  width: 0;
+  height: 5%;
+  bottom: -0.3em;
+}
+
+li > a:hover::before {
+  width: 100%;
+  z-index: 1;
+}
