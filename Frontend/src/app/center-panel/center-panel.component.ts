@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ExperienceListComponent } from '../experience/experiences.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-center-panel',
-  imports: [ExperienceListComponent],
+  imports: [RouterOutlet],
   templateUrl: './center-panel.component.html',
   styleUrl: './center-panel.component.css',
 })
