@@ -1,0 +1,9 @@
+.home{
+  height: 100%;
+}
+
+.part {
+  flex: 1;
+  border: 1px solid #222831;
+  display: flex;
+}
