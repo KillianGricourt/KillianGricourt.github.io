@@ -9,6 +9,7 @@ import { ImageDisplayerComponent } from '../image-displayer/image-displayer.comp
   imports: [CarrouselComponent, ImageDisplayerComponent],
   templateUrl: `experiences.component.html`,
   styleUrls: [`experience.component.css`],
+  host: { class: 'experiences' },
 })
 export class ExperienceListComponent implements OnInit {
   @Input() experiences: Experience[] = [];

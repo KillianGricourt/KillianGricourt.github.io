@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { ImageDisplayerComponent } from '../image-displayer/image-displayer.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ImageDisplayerComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

@@ -1,42 +1,40 @@
-<div class="experiences">
-  @if (isLoading) {
-    <!-- CSS animation for loading From Uiverse.io by jeremyssocial -->
-    <div class="flex-list">
-      <div class="terminal-loader">
-        <div class="terminal-header">
-          <div class="terminal-title">Status</div>
-          <div class="terminal-controls">
-            <div class="control close"></div>
-            <div class="control minimize"></div>
-            <div class="control maximize"></div>
-          </div>
+@if (isLoading) {
+  <!-- CSS animation for loading From Uiverse.io by jeremyssocial -->
+  <div class="flex-list">
+    <div class="terminal-loader">
+      <div class="terminal-header">
+        <div class="terminal-title">Status</div>
+        <div class="terminal-controls">
+          <div class="control close"></div>
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
         </div>
-        <div class="text">Loading...</div>
       </div>
-      <p class="centered">
-        Le serveur peut prendre jusqu'à 2 minutes pour démarrer
-      </p>
+      <div class="text">Loading...</div>
+    </div>
+    <p class="centered">
+      Le serveur peut prendre jusqu'à 2 minutes pour démarrer
+    </p>
+  </div>
+}
+
+@if (!isLoading && experiences && experiences.length > 0) {
+  <div class="experience-selection">
+    <app-image-displayer class="background-image" [src]="backgroundImage" />
+    <app-carrousel
+      class="flex-container carrousel"
+      [elements]="experiences"
+      (elementChange)="onElementChange($event)"
+    />
+  </div>
+  @if (currentExperience) {
+    <div class="centered experience-details">
+      <h3>{{ currentExperience.summary }}</h3>
+      <p>{{ currentExperience.description }}</p>
     </div>
   }
+}
 
-  @if (!isLoading && experiences && experiences.length > 0) {
-    <div class="experience-selection">
-      <app-image-displayer class="background-image" [src]="backgroundImage" />
-      <app-carrousel
-        class="flex-container carrousel"
-        [elements]="experiences"
-        (elementChange)="onElementChange($event)"
-      />
-    </div>
-    @if (currentExperience) {
-      <div class="centered experience-details">
-        <h3>{{ currentExperience.summary }}</h3>
-        <p>{{ currentExperience.description }}</p>
-      </div>
-    }
-  }
-
-  @if (errorMessage) {
-    <p class="error">Erreur : {{ errorMessage }}</p>
-  }
-</div>
+@if (errorMessage) {
+  <p class="error">Erreur : {{ errorMessage }}</p>
+}

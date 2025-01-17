@@ -18,6 +18,10 @@ body{
   background-color: #222831;
 }
 
+.experiences {
+
+}
+
 .flex-container{
   flex: 1;
   display: flex;
@@ -37,5 +41,4 @@ body{
 
 .flex-item{
   flex: 1;
-
 }
