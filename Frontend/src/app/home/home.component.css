@@ -1,6 +1,5 @@
 .home{
-  height: 100%;
-
+ overflow: hidden;
 }
 
 .home::before{
@@ -15,6 +14,10 @@
   background-position: center;
   clip-path: inset(0 0 0 0);
   filter: blur(5px) opacity(0.5);
+}
+
+.home-container{
+  position: relative;
 }
 
 .part {
