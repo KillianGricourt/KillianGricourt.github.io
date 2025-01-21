@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { LeftPanelComponent } from './left-panel/left-panel.component';
 import { CenterPanelComponent } from './center-panel/center-panel.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LeftPanelComponent, CenterPanelComponent],
+  imports: [LeftPanelComponent, CenterPanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

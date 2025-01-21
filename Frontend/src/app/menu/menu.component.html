@@ -1,9 +1,9 @@
 <nav>
   <ul class="flex-list ul">
-    <li class="li">
+    <li class="li" [ngClass]="{ active: isActive('/home') }">
       <a routerLink="/home" routerLinkActive="active">Home</a>
     </li>
-    <li class="li">
+    <li class="li" [ngClass]="{ active: isActive('/experiences') }">
       <a routerLink="/experiences" routerLinkActive="active">Experiences</a>
     </li>
   </ul>

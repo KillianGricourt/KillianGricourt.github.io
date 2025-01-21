@@ -32,3 +32,7 @@ li > a:hover::before {
   width: 100%;
   z-index: 1;
 }
+
+.active {
+  background-color: #31363F;
+}
