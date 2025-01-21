@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
@@ -37,9 +38,24 @@ app.get('/experiences', (req, res) => {
     res.status(200).json(experiences);
 });
 
+app.get('/stayingalive', (req, res) => {
+    res.status(200).send("Staying alive");
+});
+
 app.use('/images', express.static(path.join(dataFilePath, 'images')));
 
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+setInterval(() => {
+    axios.get('https://killiangricourt-github-io.onrender.com/stayingalive')
+        .then(() => {
+            console.log("Staying alive response from server");
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}, 40000)
