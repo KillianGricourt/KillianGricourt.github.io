@@ -1,5 +1,6 @@
 .home{
- overflow: hidden;
+  overflow: hidden;
+  background-color: black;
 }
 
 .home::before{
@@ -23,8 +24,48 @@
 .part {
   flex: 1;
   padding: 5%;
-  border: 1px solid #222831;
+  border: 5px solid #222831;
   display: flex;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
+}
+
+.bonjour {
+  font-size: 2em;
+}
+
+p > b {
+  font-family: monospace;
+  font-size: 1.5em;
+  color: gray;
+}
+
+.technos th {
+  padding: 30px;
+}
+
+.technos td {
+  border-right: 1px solid #ccc; /* Bordure droite grise */
+}
+
+.technos td:last-child {
+  border-right: none; /* Supprime la bordure de la dernière colonne */
+}
+
+.technos {
+  border-collapse: collapse; /* Fusionne les bordures des cellules */
+}
+
+ul {
+  list-style: none; /* Supprime les puces par défaut */
+}
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 10px 0;
+}
+li img {
+  width: 50px;
+  height: 50px;
 }

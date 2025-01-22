@@ -10,6 +10,10 @@ body{
   color: white;
 }
 
+.mode-recruteur{
+  color: rgba(0, 0, 0, 0);
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -43,3 +47,5 @@ body{
 .flex-item{
   flex: 1;
 }
+
+
