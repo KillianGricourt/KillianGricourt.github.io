@@ -43,6 +43,10 @@
   }
 }
 
+.justified {
+  text-align: justify;
+}
+
 .experience-selection {
   position: relative;
 }
