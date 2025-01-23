@@ -1,15 +1,15 @@
-.home{
+.home {
   overflow: hidden;
   background-color: black;
 }
 
-.home::before{
-  content: '';
+.home::before {
+  content: "";
   position: absolute;
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background-image: url('https://killiangricourt-github-io.onrender.com/images/polytech.webp');
+  background-image: url("https://killiangricourt-github-io.onrender.com/images/polytech.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -17,13 +17,13 @@
   filter: blur(5px) opacity(0.5);
 }
 
-.home-container{
+.home-container {
   position: relative;
 }
 
 .part {
   flex: 1;
-  padding: 5%;
+  padding: 5% 5% 5% 5%;
   border: 5px solid #222831;
   display: flex;
   background-color: rgba(0, 0, 0, 0.4);
@@ -40,24 +40,29 @@ p > b {
   color: gray;
 }
 
-.technos th {
-  padding: 30px;
-}
-
-.technos td {
-  border-right: 1px solid #ccc; /* Bordure droite grise */
-}
-
-.technos td:last-child {
-  border-right: none; /* Supprime la bordure de la dernière colonne */
-}
-
 .technos {
-  border-collapse: collapse; /* Fusionne les bordures des cellules */
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.technos div {
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .technos {
+    flex-direction: column;
+  }
 }
 
 ul {
-  list-style: none; /* Supprime les puces par défaut */
+  list-style: none;
+  padding: 0;
+  width: fit-content;
+  margin: auto;
 }
 li {
   display: flex;
@@ -66,6 +71,6 @@ li {
   padding: 10px 0 10px 0;
 }
 li img {
-  width: 50px;
-  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
 }
