@@ -35,7 +35,7 @@ const readData = () => {
 
 app.get('/cv', (req, res) => {
     const filePath = path.join(dataFilePath, 'Killian_Gricourt_CV.pdf');
-
+    res.setHeader('Content-Disposition', 'attachment; filename="Killian_Gricourt_CV.pdf"');
     res.sendFile(filePath, (err) => {
         if (err) {
             console.error(err);
