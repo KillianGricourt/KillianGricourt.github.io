@@ -8,6 +8,13 @@
       />
     </div>
     <h1 id="name">{{ title }}</h1>
+    <button
+      class="CV-button"
+      (click)="downloadCV()"
+      (mousemove)="throwColor($event)"
+    >
+      Télécharger mon CV
+    </button>
   </div>
   <app-menu />
 </div>
