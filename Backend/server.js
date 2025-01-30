@@ -33,6 +33,17 @@ const readData = () => {
     }
 };*/
 
+app.get('/cv', (req, res) => {
+    const filePath = path.join(dataFilePath, 'Killian_Gricourt_CV.pdf');
+
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Erreur lors du téléchargement du CV');
+        }
+    });
+});
+
 app.get('/experiences', (req, res) => {
     const experiences = readData();
     res.status(200).json(experiences);
