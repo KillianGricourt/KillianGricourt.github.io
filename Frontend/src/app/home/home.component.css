@@ -82,4 +82,6 @@ li {
 li img {
   max-width: 50px;
   max-height: 50px;
+  min-width: 50px;
+  min-height: 50px;
 }
